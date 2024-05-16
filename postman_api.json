@@ -1,0 +1,161 @@
+{
+    "info": {
+      "name": "Property Management API",
+      "_postman_id": "d8d5a4ea-ef7a-4e6c-82a6-663e7d20c6f0",
+      "description": "Collection for testing Property Management API endpoints",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Create New Property",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "name": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"name\": \"Green Acres\",\n  \"address\": \"123 Green St\",\n  \"city\": \"Greenville\",\n  \"state\": \"CA\"\n}"
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/create_new_property",
+            "protocol": "http",
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "port": "8000",
+            "path": [
+              "create_new_property"
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Fetch Property Details",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://127.0.0.1:8000/fetch_property_details?city=Greenville",
+            "protocol": "http",
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "port": "8000",
+            "path": [
+              "fetch_property_details"
+            ],
+            "query": [
+              {
+                "key": "city",
+                "value": "Greenville"
+              }
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Update Property Details",
+        "request": {
+          "method": "PUT",
+          "header": [
+            {
+              "key": "Content-Type",
+              "name": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"property_id\": \"<INSERT_PROPERTY_ID>\",\n  \"name\": \"Green Acres Updated\",\n  \"address\": \"123 Green St Updated\",\n  \"city\": \"Greenville\",\n  \"state\": \"CA\"\n}"
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/update_property_details",
+            "protocol": "http",
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "port": "8000",
+            "path": [
+              "update_property_details"
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Find Cities by State",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://127.0.0.1:8000/find_cities_by_state?state=CA",
+            "protocol": "http",
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "port": "8000",
+            "path": [
+              "find_cities_by_state"
+            ],
+            "query": [
+              {
+                "key": "state",
+                "value": "CA"
+              }
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Find Similar Properties",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://127.0.0.1:8000/find_similar_properties?property_id=<INSERT_PROPERTY_ID>",
+            "protocol": "http",
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "port": "8000",
+            "path": [
+              "find_similar_properties"
+            ],
+            "query": [
+              {
+                "key": "property_id",
+                "value": "<INSERT_PROPERTY_ID>"
+              }
+            ]
+          }
+        },
+        "response": []
+      }
+    ]
+  }
+  
